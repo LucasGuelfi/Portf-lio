@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+/*:root, variavel para que ela possa ser aplicada globalmente em seu documento HTML:*/
+
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria:#FB2576;
+    --cor-terciaria:#150050;
+    --cor-hover:#3F0071;
+    --cor-hover2:#3F0071;
+    
+    --fonte-primaria:'Krona One', sans-serif;
+    --fonte-secundaria:'Montserrat', sans-serif;
+
+    --fonte-tamanho:1.5rem;
+}
+
+*{/*retirar tamnhhos pre estabelecidos*/
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /*height: 100vh; vh serve para utilizar todo conteudo do body pagina, quando nao tem o footer rodape*/
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+
+
+.cabecalho{
+    padding: 2% 0% 0% 15%;
+}
+.cabecalho__menu{
+    display: flex;
+    gap:80px;
+}
+
+.cabecalho__menu_link{
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;
+    font-size: var(--fonte-tamanho);
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+.cabecalho__menu_link:hover{
+    color: var(--cor-hover2);
+}
+
+
+.apresentacao{
+    /* margin: 10% 15%; espacamento externo  */
+    padding: 5% 15%; /* Padding é responsável por definir a distância entre um conteúdo e suas bordas.*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.titulo-destaque{
+    color: var(--cor-terciaria);
+}S
+
+.apresentacao__conteudo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.apresentacao__conteudo__titulo{
+    /*font-size: 36px; conversao de px para rem, 1 rem equivale a 16 px*/
+    font-size: 2.25rem;
+    font-family: var(--fonte-primaria);
+}
+
+.apresentacao__conteudo__titulo__curriculo{
+    font-family: var(--fonte-primaria);
+}
+
+
+.apresentacao__conteudo__texto{
+    font-size: var(--fonte-tamanho);
+    font-family: var(--fonte-secundaria);
+}
+
+.apresentacao__links{
+    display: flex;
+    justify-content: space-between;/*espacamento em section e outra*/ 
+    flex-direction: column; /*adicionar em formato de coluna ao inves de linha que é o padrão do display flex*/
+    align-items:center;
+    gap: 32px; /*espaçamento tanto horizon quanto vertical dependendo de como esetekja parametrizado o flex direction*/
+}
+
+.apresentacao__links__navegacao{
+    /* background-color: #22D4FD; ctrl +k +c atalho para comentar */
+    display: flex;
+    justify-content:center;
+    gap: 16px;
+    /*width: 381px;*/
+    width: 50%;
+    text-align: center;/*centralizando o texto*/
+    border-radius: 8px;/*borda*/
+    font-size: var(--fonte-tamanho);/*tamanh da fonte */
+    font-weight: 600;/*fonte peso*/
+    padding: 21.5px 0;/*espaçamento interno tanto horizon e vertica Padding é responsável por definir a distância entre um conteúdo e suas bordas.*/
+    text-decoration: none;/*retirar sublinhado*/
+    color: var(--cor-secundaria);/*cor da fonte*/
+    font-family: var(--fonte-secundaria);
+    border: 2px solid var(--cor-terciaria);
+}
+
+.apresentacao__links__navegacao:hover{
+    background-color:var(--cor-hover);
+}
+
+.apresentacao__links__subtitulo{
+    font-family: var(--fonte-primaria);
+    font-size: var(--fonte-tamanho); /*tamanho da fonte*/
+    font-weight: 400;/*fonte peso*/
+}
+
+.apresentacao__imagem{
+    width:50%;
+    border-radius: 100px;
+    border: 5px solid var(--cor-terciaria);
+}
+
+.rodape{
+    padding: 24px;/* Padding é responsável por definir a distância entre um conteúdo e suas bordas.*/
+    background: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    text-align: center;/*centralizando o texto*/
+    font-family: var(--fonte-secundaria);
+    font-size: var(--fonte-tamanho);
+    font-weight: 400;
+
+}
+
+/*permitir colocar condição para aplicar estilo css especifico, caso a tela for 1200px de width aplicar esses estilos.*/
+@media (min-width:350px) and (max-width:1200px){
+    
+    :root {
+        --cor-primaria: #181823;
+        --cor-secundaria:#E9F8F9;
+        --cor-terciaria:#537FE7;
+        --cor-hover:#C0EEF2;
+        --cor-hover2:#C0EEF2;
+    }
+
+    .cabecalho{
+        padding: 5%;
+    }
+
+    .cabecalho__menu{
+        justify-content: center;/*centralizando conforme a tela utilizado com display flex*/
+        width: 100%;
+        gap: 20px;
+    }
+
+    .apresentacao{
+        flex-direction: column-reverse; /*inverter a posição imagem embaixo para cima*/
+        padding:10%;
+    }
+
+    .apresentacao__conteudo{
+        width:auto;/* ou 100% preencher todo o tamanho da tela de forma automatica,vai acompanhar o tamanho da tela de forma automática.*/
+        margin:auto;
+    }
+    
+    .apresentacao__links__navegacao{
+        width: 70%;
+    }
+
+    .apresentacao__imagem{
+         border-radius: 50px; 
+         width: 70%;
+    }
+}
